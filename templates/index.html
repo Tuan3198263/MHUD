@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Online Shopper Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name=" Administrative" placeholder=" Administrative" required="required" />
+        <input type="text" name="Administrative_Duration" placeholder="Administrative_Duration" required="required" />
+		<input type="text" name="Informational" placeholder="Informational" required="required" />
+		<input type="text" name="Informational_Duration" placeholder="Informational_Duration" required="required" />
+        <input type="text" name="ProductRelated" placeholder="ProductRelated" required="required" />
+        <input type="text" name="ProductRelated_Duration" placeholder="ProductRelated_Duration" required="required" />
+        <input type="text" name="BounceRates" placeholder="BounceRates" required="required" />
+        <input type="text" name="ExitRates" placeholder="ExitRates" required="required" />
+        <input type="text" name="PageValues" placeholder="PageValues" required="required" />
+        <input type="text" name="SpecialDay" placeholder="SpecialDay" required="required" />
+        <input type="text" name="Month" placeholder="Month" required="required" />
+        <input type="text" name="OperatingSystems" placeholder="OperatingSystems" required="required" />
+        <input type="text" name="Browser" placeholder="Browser" required="required" />
+        <input type="text" name="Region" placeholder="Region" required="required" />
+        <input type="text" name="TrafficType" placeholder="TrafficType" required="required" />
+        <input type="text" name="VisitorType" placeholder="VisitorType" required="required" />
+        <input type="text" name="Weekend" placeholder="Weekend" required="required" />
+ 
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
